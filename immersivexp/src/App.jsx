@@ -17,11 +17,10 @@ const Scene = () => {
 
   return (
     <>
-      <color attach="background" args={["lightblue"]} />
+      <color attach="background" args={["black"]} />
       <Environment preset="city" />
       <PerspectiveCamera theatreKey="Camera" makeDefault position={[0, 0, 0]} fov={90} near={0.1} far={70} />
-      <ambientLight intensity={1} />
-      <directionalLight intensity={3} />
+      <e.spotLight theatreKey="spot light" intensity={1} position={[0,0,0]}/>
       <Watch />
     </>
   );
@@ -35,22 +34,32 @@ const App = () => {
       <ScrollControls pages={5}>
         <SheetProvider sheet={sheet}>
           <Scene />
-        </SheetProvider>
+        </SheetProvider> 
         <Scroll html >
           <ScrollPageContainer>
             <ContentContainer>
             <h1 className="text-3xl font-bald underline" >Hello</h1>
             </ContentContainer>
           </ScrollPageContainer>
+       
           <ScrollPageContainer>
+            <ContentContainer>
             <h1 className="text-3xl font-bald underline" >Hello</h1>
+            </ContentContainer>
           </ScrollPageContainer>
+       
           <ScrollPageContainer>
+            <ContentContainer>
             <h1 className="text-3xl font-bald underline" >Hello</h1>
+            </ContentContainer>
           </ScrollPageContainer>
+       
           <ScrollPageContainer>
+            <ContentContainer>
             <h1 className="text-3xl font-bald underline" >Hello</h1>
+            </ContentContainer>
           </ScrollPageContainer>
+       
          
         </Scroll>
       </ScrollControls>
