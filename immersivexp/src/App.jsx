@@ -1,6 +1,6 @@
 import { Canvas, useFrame } from "@react-three/fiber";
 import Watch from "./modelComps/Watch";
-import { Environment, ScrollControls, useScroll } from "@react-three/drei";
+import { Environment, ScrollControls, useScroll, Scroll } from "@react-three/drei";
 import { getProject, val } from "@theatre/core";
 import { editable as e, SheetProvider, PerspectiveCamera, useCurrentSheet } from "@theatre/r3f";
 
@@ -34,6 +34,20 @@ const App = () => {
         <SheetProvider sheet={sheet}>
           <Scene />
         </SheetProvider>
+        <Scroll html >
+          <div >
+            <h1 className='text-3xl font-bold underline'>Scroll down to see the Animation</h1>
+          </div>
+          <div >
+            <h1 ></h1>
+          </div>
+          <div >
+            <h1 ></h1>
+          </div>
+          <div >
+            <h1 ></h1>
+          </div>
+        </Scroll>
       </ScrollControls>
     </Canvas>
   );
