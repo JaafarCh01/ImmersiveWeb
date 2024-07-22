@@ -5,6 +5,8 @@ import { getProject, val } from "@theatre/core";
 import { editable as e, SheetProvider, PerspectiveCamera, useCurrentSheet } from "@theatre/r3f";
 import ScrollPageContainer from "./UI/ScrollPageContainer";
 import ContentContainer from "./UI/ContentContainer";
+import SpotLightWithHelper from "./SpotLightWithHelper";
+
 
 const Scene = () => {
   const sheet = useCurrentSheet();
@@ -20,7 +22,8 @@ const Scene = () => {
       <color attach="background" args={["black"]} />
       <Environment preset="city" />
       <PerspectiveCamera theatreKey="Camera" makeDefault position={[0, 0, 0]} fov={90} near={0.1} far={70} />
-      <e.spotLight theatreKey="spot light" intensity={1} position={[0,0,0]}/>
+      <SpotLightWithHelper theatreKey="spot Ligth 1" showHelper={true} position={[0, 0, 0]} intensity={1}  />
+      <SpotLightWithHelper theatreKey="spot Ligth 2" showHelper={true} position={[0, 0, 0]} intensity={1}  />
       <Watch />
     </>
   );
