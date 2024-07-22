@@ -3,6 +3,8 @@ import Watch from "./modelComps/Watch";
 import { Environment, ScrollControls, useScroll, Scroll } from "@react-three/drei";
 import { getProject, val } from "@theatre/core";
 import { editable as e, SheetProvider, PerspectiveCamera, useCurrentSheet } from "@theatre/r3f";
+import ScrollPageContainer from "./UI/ScrollPageContainer";
+import ContentContainer from "./UI/ContentContainer";
 
 const Scene = () => {
   const sheet = useCurrentSheet();
@@ -35,18 +37,21 @@ const App = () => {
           <Scene />
         </SheetProvider>
         <Scroll html >
-          <div >
-            <h1 className='text-3xl font-bold underline'>Scroll down to see the Animation</h1>
-          </div>
-          <div >
-            <h1 ></h1>
-          </div>
-          <div >
-            <h1 ></h1>
-          </div>
-          <div >
-            <h1 ></h1>
-          </div>
+          <ScrollPageContainer>
+            <ContentContainer>
+            <h1 className="text-3xl font-bald underline" >Hello</h1>
+            </ContentContainer>
+          </ScrollPageContainer>
+          <ScrollPageContainer>
+            <h1 className="text-3xl font-bald underline" >Hello</h1>
+          </ScrollPageContainer>
+          <ScrollPageContainer>
+            <h1 className="text-3xl font-bald underline" >Hello</h1>
+          </ScrollPageContainer>
+          <ScrollPageContainer>
+            <h1 className="text-3xl font-bald underline" >Hello</h1>
+          </ScrollPageContainer>
+         
         </Scroll>
       </ScrollControls>
     </Canvas>
